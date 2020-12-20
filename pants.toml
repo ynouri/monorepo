@@ -14,3 +14,6 @@ interpreter_constraints = ["==3.8.*"]
 #  problematic system Pythons. See
 #  https://www.pantsbuild.org/docs/python-interpreter-compatibility#changing-the-interpreter-search-path.
 interpreter_search_paths = ["<PATH>", "<PYENV>"]
+
+[black]
+args = ["--line-length", "79"]

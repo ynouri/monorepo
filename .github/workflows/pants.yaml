@@ -35,15 +35,15 @@ jobs:
 
       - uses: actions/cache@v2
         with:
-          path:
-            - ~/.cache/pip
+          path: |
+            ~/.cache/pip
           key: ${{ runner.os }}-${{ env.pythonLocation }}
 
       - uses: actions/cache@v2
         with:
-          path:
-            - ~/.cache/pants/setup
-            - ~/.cache/pants/lmdb_store
+          path: |
+            ~/.cache/pants/setup
+            ~/.cache/pants/lmdb_store
           key: ${{ runner.os }}-${{ env.pythonLocation }}-${{ hashFiles('pants.toml') }}
 
       - name: Bootstrap

@@ -51,10 +51,9 @@ jobs:
           pip install virtualenv
           ./pants --version
 
-      # TODO: enable linting step
-      # - name: Lint
-      #   run: |
-      #     ./pants lint ::
+      - name: Lint
+        run: |
+          ./pants lint ::
 
       - name: Test
         run: |

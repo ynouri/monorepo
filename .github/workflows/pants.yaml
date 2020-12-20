@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-    env:
-      PANTS_CONFIG_FILES: pants.ci.toml
+    # env:
+    #   PANTS_CONFIG_FILES: pants.ci.toml
 
     runs-on: ubuntu-latest
 
@@ -25,14 +25,25 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      # TODO: consider this to make Pants bootstrap faster?
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: ${{ env.pythonLocation }}
+      #     key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+
       - name: Bootstrap
         run: |
           pip install virtualenv
           ./pants --version
 
-      - name: Lint
-        run: |
-          ./pants lint ::
+      # TODO: enable linting step
+      # - name: Lint
+      #   run: |
+      #     ./pants lint ::
 
       - name: Test
         run: |

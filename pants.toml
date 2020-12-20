@@ -3,7 +3,8 @@ pants_version = "2.1.0"
 backend_packages = [
   "pants.backend.python", 
   "pants.backend.python.lint.black",
-  "pants.backend.python.lint.flake8"
+  "pants.backend.python.lint.flake8",
+  "pants.backend.python.lint.pylint"
 ]
 
 [python-setup]
@@ -17,3 +18,9 @@ interpreter_search_paths = ["<PATH>", "<PYENV>"]
 
 [black]
 args = ["--line-length", "79"]
+
+[flake8]
+config = ".flake8"
+
+[pylint]
+config = ".pylintrc"

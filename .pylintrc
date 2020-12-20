@@ -1,0 +1,15 @@
+[BASIC]
+good-names=x,y,X,Y,ds,i,j,k,n,_,logger
+disable=
+    R,
+    C,
+    fixme,
+    bad-continuation,
+    logging-format-interpolation,
+    logging-fstring-interpolation,
+    redefined-outer-name
+ignored-modules=tensorflow.keras
+ignore-patterns=BUILD
+
+[TYPECHECK]
+ignored-classes=PublisherClient

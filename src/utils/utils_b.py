@@ -1,0 +1,2 @@
+class UselessClass:
+    pass

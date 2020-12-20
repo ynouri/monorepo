@@ -1,5 +1,5 @@
-from utils.utils_a import sum_two_numbers
 from time import sleep
+from utils.utils_a import sum_two_numbers
 
 
 MAX_NB_OF_CHARS_PER_LINE = [
